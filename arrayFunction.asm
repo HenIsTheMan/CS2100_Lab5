@@ -42,6 +42,7 @@ main:
 
 	## place the min item in $t3 for printing
 	lw   $t3, 0($v0)	# $t3 is the current item
+	addi $t7, $v0, 0	# Store address of min val in $t7 for later
 
 	## Print an integer followed by a newline
 	li   $v0, 1   		# system call code for print_int
@@ -55,8 +56,11 @@ main:
 	# Calculate and print the index of min item
 	
 	## Place the min index in $t3 for printing
+	la $t6 array		# Store address of array in $t6
 
+	sub $t7, $t7, $t6	# Get address diff
 
+	srl $t3, $t7, 2	# $t3 = $t7 / 4
 
 	## Print the min index
 
