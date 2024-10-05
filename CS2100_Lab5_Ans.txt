@@ -1,0 +1,8 @@
+The instruction address of "jal sayHi" is at 0x0040000c
+
+The PC is now at 0x00400028
+The register $31 now contains 0x00400010
+
+$31 = Addr(jal) + 4
+
+jr $31
