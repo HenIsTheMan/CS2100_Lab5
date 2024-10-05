@@ -6,8 +6,13 @@ newl:  .asciiz "\n"
        .text
 main:
 	# Print the original content of array
-	# setup the parameter(s)
-	# call the printArray function
+	
+	## setup the parameter(s)
+	la $a0, array
+	li $a1, 10
+
+	## call the printArray function
+	jal	printArray
 
 	# Ask the user for two indices
 	li   $v0, 5         	# System call code for read_int
